@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.preprocessing import StandardScaler
 
-from check_structure import check_existing_file, check_existing_folder
+from check_structure import check_existing_file, check_existing_folder, create_folder_if_necessary
 
 def split_data(df):
     # Split data into training and testing sets
@@ -36,6 +36,7 @@ def save_normalization(X_train, X_test, output_folderpath):
 
     
 def main():
+    create_folder_if_necessary(str(project_dir)+"/data/processed_data")
     df = import_dataset(str(project_dir)+"/data/raw_data/raw.csv")
     df = df.drop(['date'], axis=1)
     X_train, X_test, y_train, y_test = split_data(df)

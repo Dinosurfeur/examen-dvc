@@ -28,3 +28,8 @@ def check_existing_folder(folder_path):
                 print("Invalid response. Please enter 'y' or 'n'.")
     else:
         return False
+
+def create_folder_if_necessary(output_folderpath):
+    # Create folder if necessary
+    if os.path.exists(output_folderpath) == False :
+        os.makedirs(output_folderpath)
