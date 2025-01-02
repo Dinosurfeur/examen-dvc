@@ -1,0 +1,5 @@
+outs:
+- md5: 5dec7056c540ad3103584ee33e685084
+  size: 10129947
+  hash: md5
+  path: gridsearch_model.pkl
