@@ -25,7 +25,7 @@ loaded_model = load_model(str(project_dir)+"/models", model_filename)
 
 predictions = loaded_model.predict(X_test)
 pred_df = pd.DataFrame(predictions, columns=['predictions'])
-predictions_path = str(project_dir)+"/metrics/scores.json"
+predictions_path = str(project_dir)+"/data/predictions.csv"
 pred_df.to_csv(predictions_path, index=False)
 
 score = loaded_model.score(X_test,y_test)

@@ -1,2 +1,3 @@
 /dvc_venv
 /clean_data.csv
+*.pkl
