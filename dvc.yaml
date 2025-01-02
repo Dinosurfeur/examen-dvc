@@ -20,3 +20,11 @@ stages:
     - src/models/train_model.py
     outs:
     - models/trained_model.pkl
+  evaluation:
+    cmd: python src/models/evaluate_model.py
+    deps:
+    - models/trained_model.pkl
+    - src/models/evaluate_model.py
+    metrics:
+    - metrics/scores.json:
+        cache: false
